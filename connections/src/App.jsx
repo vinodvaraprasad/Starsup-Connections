@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
@@ -9,23 +9,18 @@ import Colleges from './pages/Colleges';
 import Dashboard from './pages/Dashboard';
 
 const App = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
+
   return (
     <div className="app">
-      {/* Fixed Sidebar */}
-      <Sidebar />
-
-      {/* Main content wrapper shifted right due to fixed sidebar */}
-      <div className="main-content-wrapper">
-        {/* Top Header with icons (star points, bell, mail, user) */}
-        <Header />
-
-        {/* Page content */}
+      <Sidebar isOpen={isSidebarOpen} />
+      <div className={`main-content-wrapper ${isSidebarOpen ? '' : 'expanded'}`}>
+        <Header onToggleSidebar={toggleSidebar} />
         <div className="main-content">
           <Routes>
-            {/* Show Dashboard page at root */}
             <Route path="/" element={<Dashboard />} />
-
-            {/* Functional pages */}
             <Route path="/students" element={<Students />} />
             <Route path="/faculty" element={<Faculty />} />
             <Route path="/professionals" element={<Professionals />} />
