@@ -15,16 +15,16 @@ import {
   FlaskConical
 } from 'lucide-react';
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen = true }) => {
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isOpen ? 'visible' : 'hidden'}`}>
       {/* Logo Section */}
       <div className="logo">
         <img src={logo} alt="Logo" className="logo-img" />
         <span className="logo-text">STARUPS</span>
       </div>
 
-      {/* Overview Section */}
+      {/* Overview */}
       <div className="sidebar-section">
         <p className="sidebar-title">Overview</p>
         <NavLink to="/" className="nav-link">
@@ -33,7 +33,7 @@ const Sidebar = () => {
         </NavLink>
       </div>
 
-      {/* Learning Section */}
+      {/* Learning */}
       <div className="sidebar-section">
         <p className="sidebar-title">Learning</p>
         <NavLink to="/courses" className="nav-link">
@@ -50,7 +50,7 @@ const Sidebar = () => {
         </NavLink>
       </div>
 
-      {/* Opportunities Section */}
+      {/* Opportunities */}
       <div className="sidebar-section">
         <p className="sidebar-title">Opportunities</p>
         <NavLink to="/startups" className="nav-link">
@@ -75,7 +75,7 @@ const Sidebar = () => {
         </NavLink>
       </div>
 
-      {/* Resources Section */}
+      {/* Resources */}
       <div className="sidebar-section">
         <p className="sidebar-title">Resources</p>
         <NavLink to="/tech-updates" className="nav-link">
