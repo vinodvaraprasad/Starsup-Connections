@@ -1,20 +1,20 @@
-
 import React from 'react';
-import { Star, Mail, Bell, Settings, UserCircle, Power } from 'lucide-react';
+import { Menu, Bell, Mail, User, Star } from 'lucide-react';
 
-const Header = () => {
+const Header = ({ onToggleSidebar }) => {
   return (
     <div className="top-header">
+      <button className="hamburger" onClick={onToggleSidebar}>
+        <Menu size={24} />
+      </button>
       <div className="right-icons">
         <div className="points">
-          <Star size={18} style={{ marginRight: '6px', color: '#facc15' }} />
-          <span>1,250</span>
+          <Star size={16} style={{ marginRight: '6px', color: '#facc15' }} />
+          450 STAR points
         </div>
         <Mail size={20} />
         <Bell size={20} />
-        <Settings size={20} />
-        <UserCircle size={22} />
-        <Power size={20} />
+        <User size={20} />
       </div>
     </div>
   );
