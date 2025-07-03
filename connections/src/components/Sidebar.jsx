@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../assets/logo.png';
 import {
   LayoutDashboard,
   BookOpen,
@@ -17,9 +18,10 @@ import {
 const Sidebar = () => {
   return (
     <div className="sidebar">
+      {/* Logo Section */}
       <div className="logo">
-        <LayoutDashboard size={24} />
-        <span>Connections Hub</span>
+        <img src={logo} alt="Logo" className="logo-img" />
+        <span className="logo-text">STARUPS</span>
       </div>
 
       {/* Overview Section */}
