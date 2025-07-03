@@ -258,3 +258,40 @@ body {
   height: 50px;
   object-fit: contain;
 }
+
+/* Sidebar collapse behavior */
+.sidebar.hidden {
+  display: none;
+}
+
+.sidebar.visible {
+  display: block;
+}
+
+/* Adjust main content when sidebar is hidden */
+.main-content-wrapper.expanded .top-header,
+.main-content-wrapper.expanded .main-content {
+  margin-left: 0;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: auto;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Optional: Smooth transition */
+.sidebar {
+  transition: all 0.3s ease;
+}
+.sidebar.hidden {
+  display: none;
+}
+
+.sidebar.visible {
+  display: block;
+}
